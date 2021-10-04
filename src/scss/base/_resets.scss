@@ -1,3 +1,4 @@
+@use "../abstracts" as abs;
 /*-------------------------------*\
     #resets  
 \*-------------------------------*/
@@ -12,12 +13,26 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  font-family: inherit;
 }
 
 body {
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--Dark-Blue);
+}
+/* fluid typography */
+h1,
+h2,
+h3,
+p {
+  @include abs.interpolate(
+    font-size,
+    43rem,
+    82rem,
+    abs.rem(14px),
+    abs.rem(16px)
+  );
 }
 
 ul {
@@ -39,7 +54,7 @@ button {
   border: none;
   cursor: pointer;
   &:focus {
-    outline: max(1px, 0.1em) solid;
+    outline: max(1px, 0.1em) solid #000;
     outline-offset: -0.25em;
   }
 
@@ -48,7 +63,7 @@ button {
   }
 
   &:focus-visible {
-    outline: max(1, 0.1em) solid;
+    outline: max(1, 0.1em) solid #000;
     outline-offset: -0.25em;
   }
 }
