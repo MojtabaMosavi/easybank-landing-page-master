@@ -103,9 +103,15 @@
       }
 
       &-link {
-        font-size: abs.rem(14px);
         margin-left: abs.rem(23px);
         color: var(--Grayish-Blue);
+        @include abs.interpolate(
+          font-size,
+          43rem,
+          82rem,
+          abs.rem(12px),
+          abs.rem(14px)
+        );
 
         // removing the top underline
         &::before {
@@ -129,16 +135,6 @@
 
     &__cta {
       display: block;
-      font-size: clamp(1rem, 15vw, 2rem);
-      min-width: clamp(7rem, 15vw, 10rem);
-      height: 3rem;
-      border-radius: 3rem;
-      background: linear-gradient(
-        to left,
-        var(--Lime-Green),
-        var(--Bright-Cyan)
-      );
-      font-size: abs.rem(15px);
     }
   }
 

@@ -1,0 +1,36 @@
+@use "../abstracts" as abs;
+/*-------------------------------*\
+    #buttons
+\*-------------------------------*/
+
+.btn {
+  border-radius: 3rem;
+  transition: abs.$t-ease-in-out;
+
+  /*
+  *  Interpolate is used to set fluid width and typography
+  * interpolate makes sure a value state min_value <= vlaue <= max_value 
+  */
+  &__cta {
+    @include abs.interpolate(min-width, 43rem, 82rem, 7rem, 10.1rem);
+    padding: abs.rem(13px) 1rem;
+    background: linear-gradient(
+      to right,
+      var(--Lime-Green),
+      var(--Bright-Cyan)
+    );
+    color: var(--White);
+    font-weight: 700;
+    @include abs.interpolate(
+      font-size,
+      43rem,
+      82rem,
+      abs.rem(12px),
+      abs.rem(14px)
+    );
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
