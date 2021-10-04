@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+
+/*-------------------------------*\
+    #hamburger menu 
+\*-------------------------------*/
+
+.hamburger-menu {
+  background-color: var(--White);
+  height: rem(19px);
+  width: rem(25px);
+  transition: all 400ms ease-in-out;
+
+  &__bar {
+    transition: $t-ease-in-out;
+
+    display: block;
+    background: #000;
+    width: 90%;
+    height: 1px;
+
+    & + & {
+      margin-top: rem(4px);
+    }
+  }
+
+  // modifier for active state
+  &--active {
+    @extend .hamburger-menu;
+    .hamburger-menu__bar {
+      &--top {
+        transform: rotate(45deg) translate(2px, -5px);
+        transform-origin: left;
+      }
+
+      &--middle {
+        transform: rotate(-45deg) translate(1px, 1px);
+      }
+
+      &--bottom {
+        transform: rotate(45deg) translate(1px, 3.3px);
+        transform-origin: right;
+      }
+    }
+  }
+}

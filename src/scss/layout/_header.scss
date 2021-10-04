@@ -1,0 +1,146 @@
+@use "../abstracts" as abs;
+
+/*-------------------------------*\
+    #header 
+\*-------------------------------*/
+
+@keyframes rotate {
+  from {
+    transform: translateX(-200px);
+  }
+}
+.header {
+  &-wrapper {
+    @include abs.flexify();
+    padding-top: abs.rem(22px);
+    position: relative;
+  }
+
+  /*nav --------------------------------------------*/
+  &__nav {
+    position: absolute;
+    width: calc(100% - 3rem);
+    top: abs.rem(88px);
+    transform: scale(0);
+    visibility: hidden;
+
+    &--active {
+      display: block;
+      transform: scale(1);
+      visibility: visible;
+      animation: backInDown;
+      animation-duration: 2s;
+      box-shadow: 0px 0px 14px;
+    }
+
+    &-wrapper {
+      @include abs.flexify($js-con: space-around, $flex-d: column);
+      min-height: abs.rem(265px);
+      padding: 1.3rem 0;
+      background: var(--White);
+    }
+
+    &-link {
+      display: inline-block;
+      position: relative;
+      color: var(--Dark-Blue);
+
+      // underline for the links,
+      &::after,
+      &::before {
+        visibility: hidden;
+        transform: scale(0);
+      }
+
+      &::after {
+        @include abs.underline($direction: right);
+      }
+      &::before {
+        @include abs.underline($distance: 1.5rem, $direction: left);
+      }
+
+      &:hover {
+        &::after,
+        &::before {
+          visibility: visible;
+          transform: scale(1);
+        }
+      }
+
+      &:hover {
+        color: var(--Lime-Green);
+      }
+    }
+  }
+  /*cta -----------------------------------------------*/
+  &__cta {
+    display: none;
+  }
+
+  /* tablet view--------------------------------------------------*/
+  @include abs.respond-to("tablet") {
+    background-color: var(--White);
+
+    &-wrapper {
+      padding-top: abs.rem(14px);
+    }
+    &__hamburger-menu {
+      display: none;
+    }
+
+    /*nav ------------------------------------------------*/
+    &__nav {
+      position: initial;
+      width: initial;
+      transform: scale(1);
+      visibility: visible;
+
+      &-wrapper {
+        @include abs.flexify();
+        min-height: initial;
+        min-width: abs.rem(358px);
+        padding: 1rem 0;
+      }
+
+      &-link {
+        font-size: abs.rem(14px);
+        margin-left: abs.rem(23px);
+        color: var(--Grayish-Blue);
+
+        // removing the top underline
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          @include abs.underline(
+            $direction: center,
+            $distance: abs.rem(-29px),
+            $height: 3px
+          );
+        }
+
+        // modyfing the hover state
+        &:hover {
+          color: var(--Dark-Blue);
+        }
+      }
+    }
+
+    &__cta {
+      display: block;
+      font-size: clamp(1rem, 15vw, 2rem);
+      min-width: clamp(7rem, 15vw, 10rem);
+      height: 3rem;
+      border-radius: 3rem;
+      background: linear-gradient(
+        to left,
+        var(--Lime-Green),
+        var(--Bright-Cyan)
+      );
+      font-size: abs.rem(15px);
+    }
+  }
+
+  /* laptop view-----------------------*/
+}

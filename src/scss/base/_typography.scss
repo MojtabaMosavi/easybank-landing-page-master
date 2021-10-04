@@ -1,0 +1,17 @@
+@use "../abstracts" as abs;
+/*-------------------------------*\
+    #typography
+\*-------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+$primary-font: "Public Sans", sans-serif;
+$font-size: 18px;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: abs.rem($font-size);
+  font-family: $primary-font;
+}

@@ -1,0 +1,40 @@
+@use "./variables";
+/*-------------------------------*\
+    #mixins 
+\*-------------------------------*/
+
+// defining flex container with default properties
+@mixin flexify($al-con: center, $js-con: space-between, $flex-d: row) {
+  display: flex;
+  align-items: $al-con;
+  justify-content: $js-con;
+  flex-direction: $flex-d;
+}
+
+// media queries
+@mixin respond-to($breakpoint) {
+  @media screen and (min-width: map-get($map:variables.$breakpoints,$key:$breakpoint)) {
+    @content;
+  }
+}
+
+// adding underline
+@mixin underline(
+  $width: 100%,
+  $height: 2px,
+  $distance: -0.25rem,
+  $direction: right,
+  $color-g1: var(--Lime-Green),
+  $color-g2: var(--Bright-cyan)
+) {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: $distance;
+  width: $width;
+  height: $height;
+  background: $color-g1;
+  transform-origin: $direction;
+  transition: variables.$t-ease-in-out;
+}
