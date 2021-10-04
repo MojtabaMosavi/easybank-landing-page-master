@@ -82,7 +82,7 @@
     background-color: var(--White);
 
     &-wrapper {
-      padding-top: abs.rem(14px);
+      padding: abs.rem(13px) 0;
     }
     &__hamburger-menu {
       display: none;
@@ -121,7 +121,7 @@
         &::after {
           @include abs.underline(
             $direction: center,
-            $distance: abs.rem(-29px),
+            $distance: abs.rem(-30px),
             $height: 3px
           );
         }
