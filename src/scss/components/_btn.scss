@@ -32,5 +32,12 @@
     &:hover {
       opacity: 0.6;
     }
+
+    // a static version of it
+    &--static {
+      @extend .btn__cta;
+      min-width: 10rem;
+      font-size: abs.rem(14px);
+    }
   }
 }
