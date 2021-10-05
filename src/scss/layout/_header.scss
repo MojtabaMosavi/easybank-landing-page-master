@@ -10,6 +10,8 @@
   }
 }
 .header {
+  background-color: var(--White);
+
   &-wrapper {
     @include abs.flexify();
     padding-top: 1.4rem;
@@ -80,11 +82,10 @@
 
   /* tablet view--------------------------------------------------*/
   @include abs.respond-to("tablet") {
-    background-color: var(--White);
-
     &-wrapper {
       padding: abs.rem(13px) 1rem;
     }
+
     &__hamburger-menu {
       display: none;
     }
