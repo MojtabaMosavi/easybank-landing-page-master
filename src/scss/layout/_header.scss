@@ -11,6 +11,8 @@
 }
 .header {
   background-color: var(--White);
+  position: relative;
+  z-index: 10;
 
   &-wrapper {
     @include abs.flexify();
