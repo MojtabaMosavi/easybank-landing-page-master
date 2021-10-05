@@ -12,7 +12,8 @@
 .header {
   &-wrapper {
     @include abs.flexify();
-    padding-top: abs.rem(22px);
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
     position: relative;
   }
 
