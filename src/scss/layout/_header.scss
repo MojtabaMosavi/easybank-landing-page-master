@@ -143,4 +143,9 @@
   }
 
   /* laptop view-----------------------*/
+  @include abs.respond-to("laptop") {
+    &-wrapper {
+      padding: abs.rem(13px) 0;
+    }
+  }
 }
