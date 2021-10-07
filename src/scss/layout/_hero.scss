@@ -5,6 +5,7 @@
 
 .hero {
   background: var(--Light-Grayish-Blue);
+
   &-wrapper {
     display: grid;
     grid-template:
@@ -83,6 +84,63 @@
           background-image: url("../assets/images/bg-intro-desktop.svg");
           top: -7rem;
           left: 40%;
+        }
+      }
+    }
+  }
+
+  /* laptop view---------------------------------*/
+  @include abs.respond-to("laptop") {
+    &-wrapper {
+      min-height: 45rem;
+    }
+
+    &__content {
+      @include abs.flexify(
+        $al-con: flex-start,
+        $js-con: space-between,
+        $flex-d: column
+      );
+      max-width: initial;
+      min-height: 21rem;
+    }
+
+    &__heading {
+      font-size: abs.rem(54px);
+      margin-top: abs.rem(24px);
+    }
+
+    &__text {
+      font-size: abs.rem(17px);
+      max-width: 27rem;
+    }
+
+    &__img {
+      position: absolute;
+      left: abs.rem(87px);
+      top: abs.rem(-118px);
+      min-width: 137%;
+      overflow-y: visible;
+
+      &-wrapper {
+        position: relative;
+        height: 100%;
+
+        &::after {
+          top: -240px;
+          left: -7%;
+          width: 224%;
+          height: 155%;
+        }
+      }
+    }
+  }
+  /* deskstop view---------------------------------*/
+  @include abs.respond-to("desktop") {
+    &__img {
+      &-wrapper {
+        &::after {
+          left: -20%;
         }
       }
     }
