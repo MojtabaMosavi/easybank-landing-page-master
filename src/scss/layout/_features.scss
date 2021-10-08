@@ -69,4 +69,22 @@
       color: var(--Grayish-Blue);
     }
   }
+
+  /*tablet view----------------------------------------------------*/
+  @include abs.respond-to("tablet") {
+    &-wrapper {
+      max-width: initial;
+    }
+
+    &__container {
+      grid: repeat(2, 1fr) / repeat(2, 1fr);
+      gap: abs.rem(30px);
+    }
+
+    &__feature {
+      max-width: 22rem;
+    }
+  }
+
+  /*laptop view----------------------------------------------------*/
 }
