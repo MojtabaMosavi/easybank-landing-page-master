@@ -1,0 +1,72 @@
+@use "../abstracts" as abs;
+/*-------------------------------*\
+    #features
+\*-------------------------------*/
+.features {
+  background: var(--Light-Grayish-Blue);
+
+  &-wrapper {
+    text-align: center;
+    padding-top: abs.rem(67px);
+    padding-bottom: abs.rem(67px);
+    max-width: 32rem;
+  }
+  &__intro {
+    margin-bottom: abs.rem(58px);
+  }
+  &__heading {
+    @include abs.interpolate(
+      font-size,
+      43rem,
+      90rem,
+      abs.rem(32px),
+      abs.rem(35px)
+    );
+    font-weight: 300;
+    margin-bottom: abs.rem(18px);
+  }
+  &__description {
+    line-height: abs.rem(24px);
+    color: var(--Grayish-Blue);
+  }
+
+  &__container {
+    display: grid;
+    grid: repeat(4, 1fr) / 1fr;
+    gap: abs.rem(29px) 0;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__feature {
+    min-height: abs.rem(217px);
+    @include abs.flexify($js-con: space-between, $flex-d: column);
+    &-img {
+      max-width: 5rem;
+      margin: 0 auto abs.rem(7px) auto;
+    }
+
+    &-heading {
+      @include abs.interpolate(
+        font-size,
+        43rem,
+        90rem,
+        abs.rem(19px),
+        abs.rem(24px)
+      );
+      font-weight: 500;
+    }
+    &-text {
+      @include abs.interpolate(
+        font-size,
+        43rem,
+        90rem,
+        abs.rem(14px),
+        abs.rem(18px)
+      );
+      font-weight: 500;
+      line-height: abs.rem(27px);
+      color: var(--Grayish-Blue);
+    }
+  }
+}
