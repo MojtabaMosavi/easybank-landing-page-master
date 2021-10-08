@@ -23,7 +23,14 @@
 
   &__heading {
     margin-top: -6rem;
-    font-size: abs.rem(38px);
+    @include abs.interpolate(
+      font-size,
+      43rem,
+      90rem,
+      abs.rem(38px),
+      abs.rem(54px)
+    );
+
     font-weight: 300;
     margin-bottom: abs.rem(19px);
   }
@@ -106,7 +113,6 @@
     }
 
     &__heading {
-      font-size: abs.rem(54px);
       margin-top: abs.rem(24px);
     }
 
