@@ -72,6 +72,7 @@
     &-wrapper {
       grid-template: [row1-start] "content img" [row1-end] / 50% 1fr;
       align-items: center;
+      padding-bottom: 0;
     }
 
     &__content {
@@ -84,13 +85,15 @@
     }
 
     &__img {
-      left: 4rem;
+      left: 9rem;
       top: -2.5rem;
       &-wrapper {
         &::after {
           background-image: url("../assets/images/bg-intro-desktop.svg");
-          top: -7rem;
-          left: 40%;
+          top: -9rem;
+          left: 25%;
+          width: 150%;
+          height: 129%;
         }
       }
     }
@@ -99,7 +102,7 @@
   /* laptop view---------------------------------*/
   @include abs.respond-to("laptop") {
     &-wrapper {
-      min-height: 45rem;
+      min-height: abs.rem(627px);
     }
 
     &__content {
