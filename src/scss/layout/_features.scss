@@ -9,7 +9,6 @@
     text-align: center;
     padding-top: abs.rem(67px);
     padding-bottom: abs.rem(67px);
-    max-width: 32rem;
   }
   &__intro {
     margin-bottom: abs.rem(58px);
@@ -20,7 +19,7 @@
       43rem,
       90rem,
       abs.rem(32px),
-      abs.rem(35px)
+      abs.rem(39px)
     );
     font-weight: 300;
     margin-bottom: abs.rem(18px);
@@ -28,6 +27,13 @@
   &__description {
     line-height: abs.rem(24px);
     color: var(--Grayish-Blue);
+    @include abs.interpolate(
+      font-size,
+      43rem,
+      90rem,
+      abs.rem(16px),
+      abs.rem(17px)
+    );
   }
 
   &__container {
@@ -52,7 +58,7 @@
         43rem,
         90rem,
         abs.rem(19px),
-        abs.rem(24px)
+        abs.rem(23px)
       );
       font-weight: 500;
     }
@@ -62,7 +68,7 @@
         43rem,
         90rem,
         abs.rem(14px),
-        abs.rem(18px)
+        abs.rem(16px)
       );
       font-weight: 500;
       line-height: abs.rem(27px);
@@ -72,10 +78,6 @@
 
   /*tablet view----------------------------------------------------*/
   @include abs.respond-to("tablet") {
-    &-wrapper {
-      max-width: initial;
-    }
-
     &__container {
       grid: repeat(2, 1fr) / repeat(2, 1fr);
       gap: abs.rem(30px);
@@ -87,4 +89,40 @@
   }
 
   /*laptop view----------------------------------------------------*/
+  @include abs.respond-to("laptop") {
+    &-wrapper {
+      text-align: left;
+      padding-top: abs.rem(132px);
+      padding-bottom: abs.rem(100px);
+    }
+
+    &__heading {
+      margin-bottom: abs.rem(27px);
+    }
+
+    &__description {
+      line-height: abs.rem(27px);
+      max-width: 39rem;
+      word-spacing: 1px;
+    }
+
+    &__container {
+      grid: 1fr / repeat(4, 1fr);
+      gap: abs.rem(30px);
+    }
+
+    &__feature {
+      display: block;
+      max-height: 18rem;
+
+      &-img {
+        margin: abs.rem(16px) 0 abs.rem(43px) 0;
+      }
+
+      &-heading {
+        margin-bottom: abs.rem(26px);
+      }
+    }
+  }
+  /*desktop view----------------------------------------------------*/
 }
