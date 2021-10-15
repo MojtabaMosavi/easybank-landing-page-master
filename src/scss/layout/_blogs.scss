@@ -1,0 +1,48 @@
+@use "../abstracts" as abs;
+/*-------------------------------*\
+    #blogs
+\*-------------------------------*/
+
+.blogs {
+  &-wrapper {
+    padding-top: abs.rem(86px);
+    padding-bottom: abs.rem(113px);
+  }
+
+  &__heading {
+    @include abs.interpolate(
+      font-size,
+      42rem,
+      90rem,
+      abs.rem(30px),
+      abs.rem(37px)
+    );
+    text-align: center;
+    margin-bottom: abs.rem(34px);
+  }
+
+  &__container {
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      gap: abs.rem(48px);
+    }
+  }
+
+  /* laptop view ---------------------------------------------*/
+  @include abs.respond-to("laptop") {
+    &-wrapper {
+      padding-top: abs.rem(93px);
+      padding-bottom: abs.rem(80px);
+    }
+
+    &__container {
+      gap: 2rem;
+    }
+
+    &__heading {
+      text-align: left;
+      margin-bottom: abs.rem(49px);
+    }
+  }
+}
