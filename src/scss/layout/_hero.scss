@@ -19,6 +19,8 @@
   &__content {
     grid-area: content;
     text-align: center;
+    animation: slideInLeft;
+    animation-duration: 2s;
   }
 
   &__heading {
@@ -53,6 +55,8 @@
     z-index: 4;
 
     &-wrapper {
+      animation: slideInRight;
+      animation-duration: 2s;
       grid-area: img;
       &::after {
         content: "";
