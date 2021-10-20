@@ -42,6 +42,11 @@ ul {
 a,
 a:visited {
   text-decoration: none;
+
+  &:focus {
+    outline: max(1px, 0.1em) dashed;
+    outline-offset: 0.25em;
+  }
 }
 
 img {
@@ -54,7 +59,7 @@ button {
   border: none;
   cursor: pointer;
   &:focus {
-    outline: max(1px, 0.1em) solid #000;
+    outline: max(1px, 0.1em) dashed #000;
     outline-offset: -0.25em;
   }
 
@@ -63,7 +68,7 @@ button {
   }
 
   &:focus-visible {
-    outline: max(1, 0.1em) solid #000;
+    outline: max(1, 0.1em) dashed #000;
     outline-offset: -0.25em;
   }
 }
