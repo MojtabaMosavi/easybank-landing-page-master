@@ -1,0 +1,215 @@
+@use "../abstracts" as abs;
+@import "animate.css";
+
+/*-------------------------------*\
+    #footer
+\*-------------------------------*/
+.footer {
+  background-color: var(--Dark-Blue);
+
+  &-wrapper {
+    @include abs.flexify($flex-d: column);
+  }
+
+  &__logo {
+    &-wrapper {
+      margin: abs.rem(40px) 0 abs.rem(33px) 0;
+    }
+
+    filter: invert(94%) sepia(93%) saturate(0%) hue-rotate(23deg)
+      brightness(104%) contrast(101%);
+
+    // hover state, loaded from an external svg
+    &:hover {
+      filter: invert(94%)
+        url("../assets/Svg-filters/hover-filter.svg#socialIcons-hover-filter");
+    }
+  }
+
+  &__social {
+    @include abs.flexify($al-con: center, $js-con: space-between);
+    max-width: abs.rem(190px);
+    max-height: abs.rem(27px);
+    margin-bottom: abs.rem(30px);
+  }
+
+  &__icon {
+    @include abs.flexify($al-con: center, $js-con: center);
+    margin-right: 1rem;
+    position: relative;
+
+    &::after {
+      transform: scale(0);
+      visibility: hidden;
+    }
+
+    &:hover {
+      &::after {
+        @include abs.underline(
+          $direction: left,
+          $color-g1: #fff,
+          $color-g2: #fff
+        );
+        transform: scale(1);
+        visibility: visible;
+      }
+    }
+
+    &--facebook,
+    &--youtube,
+    &--twitter,
+    &--pinterest,
+    &--instagram {
+      width: abs.rem(24px);
+      min-height: abs.rem(25px);
+
+      // hover state for the icon loaded as svg
+      &:hover {
+        filter: url("../assets/Svg-filters/hover-filter.svg#socialIcons-hover-filter");
+        animation: tada;
+        animation-duration: 2s;
+        display: inline-block;
+      }
+    }
+
+    &--facebook {
+      content: url("../assets/images/icon-facebook.svg");
+    }
+
+    &--youtube {
+      content: url("../assets/images/icon-youtube.svg");
+    }
+
+    &--twitter {
+      content: url("../assets/images/icon-twitter.svg");
+    }
+
+    &--pinterest {
+      content: url("../assets/images/icon-pinterest.svg");
+    }
+
+    &--instagram {
+      content: url("../assets/images/icon-instagram.svg");
+    }
+  }
+  /* footer__nav -----------------------------------------------------*/
+
+  &__nav {
+    @include abs.flexify($al-con: center, $js-con: center, $flex-d: column);
+    margin-bottom: abs.rem(26px);
+
+    &-link {
+      display: inline-block;
+      color: var(--White);
+      font-size: abs.rem(14px);
+      margin-bottom: abs.rem(14px);
+      font-weight: 500;
+
+      &::after {
+        visibility: hidden;
+        transform: scale(0);
+      }
+
+      &::after {
+        @include abs.underline(
+          $direction: center,
+          $color-g1: #fff,
+          $color-g2: #fff
+        );
+      }
+      // hover state
+      &:hover {
+        color: var(--Lime-Green);
+        position: relative;
+
+        &::after {
+          visibility: visible;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &__cta {
+    margin-bottom: abs.rem(30px);
+
+    &:hover {
+      opacity: 1;
+      filter: brightness(140%);
+    }
+  }
+
+  &__copy-right {
+    color: var(--White);
+    margin-bottom: abs.rem(40px);
+  }
+
+  /* tablet view -----------------------------------------------------*/
+  @include abs.respond-to("tablet") {
+    &-wrapper {
+      display: grid;
+      grid-template:
+        [row1-start] "logo nav cta" 1fr [row1-end]
+        [row2-start] ". nav cta" 1fr [row2-end]
+        [row3-start] "socialIcons nav copyRight" 1fr [row3-end] / auto 40% auto;
+      justify-items: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    &__logo-wrapper {
+      justify-self: start;
+      margin: 0;
+    }
+
+    &__social {
+      grid-area: socialIcons;
+      margin: 0;
+    }
+
+    &__nav {
+      grid-area: nav;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      min-height: 7rem;
+      margin: 0;
+    }
+
+    &__cta {
+      grid-area: cta;
+      justify-self: end;
+      margin: 0;
+    }
+
+    &__copy-right {
+      grid-area: copyRight;
+      justify-self: end;
+      margin: 0;
+    }
+  }
+
+  /* laptop view -----------------------------------------------------*/
+  @include abs.respond-to("laptop") {
+    &__icon {
+      margin-right: abs.rem(12px);
+
+      &--facebook,
+      &--youtube,
+      &--twitter,
+      &--pinterest,
+      &--instagram {
+        width: initial;
+        min-height: initial;
+      }
+    }
+
+    &__nav {
+      width: 100%;
+
+      &-item {
+        align-self: end;
+      }
+    }
+  }
+}
