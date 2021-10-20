@@ -12,7 +12,7 @@
 // Requires the calc-interpolation function which can also be used independently
 
 @function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
-  $ratio: ($max-value - $min-value) / ($max-screen - $min-screen);
+  $ratio: math.div(($max-value - $min-value), ($max-screen - $min-screen));
   $value: $min-value - $ratio * $min-screen;
 
   $operand: "+";
