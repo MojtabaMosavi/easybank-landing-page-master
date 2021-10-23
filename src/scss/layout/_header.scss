@@ -11,7 +11,8 @@
 }
 .header {
   background-color: var(--White);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
 
   &-wrapper {
@@ -34,7 +35,7 @@
       transform: scale(1);
       visibility: visible;
       animation: backInDown;
-      animation-duration: 2s;
+      animation-duration: 1s;
       box-shadow: 0px 0px 14px;
     }
 
