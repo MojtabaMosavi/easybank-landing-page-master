@@ -35,3 +35,13 @@
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
+
+.fadeInLeft {
+  animation: fadeInLeft;
+  animation-duration: 2s;
+}
+
+.fadeInRight {
+  animation: fadeInLeft;
+  animation-duration: 2s;
+}
