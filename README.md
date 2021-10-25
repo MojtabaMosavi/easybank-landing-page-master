@@ -1,6 +1,5 @@
-# Frontend Mentor - Calculator app solution
+# Frontend Mentor - Easy-banking-landing-page
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -20,17 +19,15 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 Users should be able to:
 
-- See the size of the elements adjust based on their device's screen size
-- Perform mathmatical operations like addition, subtraction, multiplication, and division
-- Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
 
 ### Screenshot
 
-![](./design/desktop-design-theme-1.jpg)
+![](./design/desktop-design.jpg)
 ### Links
 
-- Live Site URL: [https://calculator-app2021.netlify.app/](https://calculator-app2021.netlify.app/)
+- Live Site URL: []()
 
 ## My process
 
@@ -47,9 +44,15 @@ Users should be able to:
 
 ### What I learned
 
-1- How to use the prefers-color-scheme to detect the user's system level theme setting and adjusting the theme accordingly.
-2- Improved my knowledge about grid.
-3- How to implement theming functionality and make it accessible but there is alot for me to learn about this topic.
+1-Doing this project I learned how to add hover state to svg icon by defining an external svg file with desired behaviors and then applying it to the svg icon's hover state.
+```css
+element {
+  &.hover{
+  filter : url("loaction of the external svg file")
+  }
+}
+```
+
 
 ### Continued development
 
