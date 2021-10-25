@@ -1,8 +1,23 @@
-console.log("working");
-const navMenu = document.querySelector(".header__hamburger-menu");
-const nav = document.querySelector(".header__nav");
+import { HamburgerMenu } from "./hambergurMenu";
+import {Observer} from "./observer"
 
-navMenu.addEventListener("click",()=>{
-    navMenu.classList.toggle("hamburger-menu--active");
-    nav.classList.toggle("header__nav--active")
-})
+const Main =(function(){
+    document.addEventListener("DOMContentLoaded",() =>{
+        // dom caching 
+        const body = document.querySelector("body");
+        const main = body.querySelector("main")
+        const hamMenuButton = body.querySelector(".header__hamburger-menu");
+        const hamMenuElement = body.querySelector(".header__nav");
+
+        // initializing the hamburger menu 
+       const HamMenu = new HamburgerMenu(
+           hamMenuElement,hamMenuButton,"header__nav--active","hamburger-menu--active");
+
+        Observer.init()
+
+        
+        })
+
+
+    
+})()
