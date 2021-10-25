@@ -8,17 +8,16 @@ export const Observer = (function(){
     function _handleObservation(entries,observer){
         entries.forEach( entry => {
             if(!entry.isIntersecting){
-                entry.target.classList.remove("fade-in");
+                entry.target.classList.remove("fadeInRight");
                 return
             }else{
-                entry.target.classList.add("fade-in");
+                entry.target.classList.add("fadeInLeft");
                 observer.unobserve(entry.target);
             }
         })
     }
     
     function init(){
-        console.log("excuting")
         CreateOberver(sections,_handleObservation);
     }
 
@@ -33,7 +32,7 @@ export const Observer = (function(){
         let configuration = options ? defaultOptions : options 
         const observer = new IntersectionObserver(callBack,configuration);
 
-        // observing each element in
+        // observing each element
         elements.forEach(entry => { observer.observe(entry)})
     }
 
